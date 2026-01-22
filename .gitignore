@@ -1,0 +1,65 @@
+# ========== Hugo自动生成的文件 ==========
+# 构建输出目录
+/public/
+# Hugo缓存
+/resources/_gen/
+# 构建锁文件
+.hugo_build.lock
+
+# ========== 操作系统文件 ==========
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ========== 编辑器文件 ==========
+# VSCode
+.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# IntelliJ
+.idea/
+*.iml
+*.iws
+
+# Vim
+*.swp
+*.swo
+*~
+
+# ========== 我们的脚本文件（要推送到GitHub的）==========
+# 注意：我们想要分享这些脚本，所以不应该忽略它们
+# preview.sh      ← 保留（分享给其他人）
+# deploy.sh       ← 保留（分享给其他人）
+# new-post.sh     ← 保留（分享给其他人）
+# write-post.sh   ← 保留（分享给其他人）
+# blog-status.sh  ← 保留（分享给其他人）
+*.sh
+# ========== 临时文件 ==========
+*.tmp
+*.log
+*.bak
+*.backup
+*.backup*
+# ========== 环境配置文件（敏感信息）==========
+# 如果有包含敏感信息的配置文件
+.env
+.env.local
+.env.*.local
+secrets.txt
+
+# ========== 用户特定文件 ==========
+# 个人笔记、草稿等
+personal-notes/
+drafts/
+scratch/
+test-*.md

@@ -1,0 +1,47 @@
+baseURL = "https://alberadam.github.io/"
+title = "安全工程师成长笔记"
+theme = "ananke"
+languageCode = "zh-cn"
+defaultContentLanguage = "zh"
+hasCJKLanguage = true
+
+enableRobotsTXT = true
+enableEmoji = true
+
+# 分页配置
+[pagination]
+  pagerSize = 5
+  path = "page"
+
+# 禁用某些页面类型
+disableKinds = ["taxonomy", "term"]
+
+# 主题参数
+[params]
+  author = "Albert"
+  description = "安全服务工程师转型之路 | 每周安全技术分享"
+  github_username = "alberadam"
+  ananke_primary_color = "#3498db"
+  ananke_secondary_color = "#2c3e50"
+  show_related_posts = true
+  show_reading_time = true
+  show_post_date = true
+  show_author = true
+
+# 菜单配置
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "📝 技术文章"
+    url = "/posts/"
+    weight = 1
+    
+  [[menu.main]]
+    identifier = "about"
+    name = "👤 关于"
+    url = "/about/"
+    weight = 2
+
+# 输出配置（完整格式）
+[outputs]
+  home = ["HTML", "RSS"]
