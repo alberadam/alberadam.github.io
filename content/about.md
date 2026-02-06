@@ -1,7 +1,3 @@
----
-title: "About Me"
----
-
 # Hello, World! 👋 我是 Alber
 
 ## 👨‍💻 身份定位
