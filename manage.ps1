@@ -5,7 +5,7 @@
 .DESCRIPTION
     用于管理基于Hugo的安全博客，提供文章创建、本地预览和部署功能。
     作者：Albert
-    版本：1.1 (修复编码问题)
+    版本：1.2 (修复Join-Path参数问题)
 #>
 
 # 检查必要工具是否安装
@@ -36,7 +36,7 @@ function Test-RequiredTools {
 function Show-Menu {
     Clear-Host
     Write-Host "===============================" -ForegroundColor Cyan
-    Write-Host "    Security Blog Manager v1.1  " -ForegroundColor Cyan
+    Write-Host "    Security Blog Manager v1.2  " -ForegroundColor Cyan
     Write-Host "===============================" -ForegroundColor Cyan
     Write-Host "Current directory: $(Get-Location)" -ForegroundColor Gray
     Write-Host ""
@@ -57,20 +57,35 @@ function New-Post {
     }
     
     # Generate safe filename
-    $filename = $title -replace '[^\w\-]', '-' -replace '\s+', '-'
+    $filename = $title -replace '[^\w\-\.]', '-' -replace '\s+', '-'
     $filename = $filename.ToLower()
     
+    # 调试信息
+    Write-Host "DEBUG: Generated filename: $filename" -ForegroundColor Gray
+    
     # Use Page Bundle mode (create folder)
-    $postDir = Join-Path "content" "posts" $filename
-    $postFile = Join-Path $postDir "index.md"
+    # 修复Join-Path参数顺序问题
+    $postDir = Join-Path -Path "content" -ChildPath "posts"
+    $postDir = Join-Path -Path $postDir -ChildPath $filename
+    $postFile = Join-Path -Path $postDir -ChildPath "index.md"
+    
+    Write-Host "DEBUG: Post directory: $postDir" -ForegroundColor Gray
+    Write-Host "DEBUG: Post file: $postFile" -ForegroundColor Gray
     
     # Create directory
-    New-Item -ItemType Directory -Force -Path $postDir | Out-Null
+    try {
+        New-Item -ItemType Directory -Force -Path $postDir -ErrorAction Stop | Out-Null
+        Write-Host "DEBUG: Directory created successfully" -ForegroundColor Gray
+    }
+    catch {
+        Write-Host "ERROR: Failed to create directory: $_" -ForegroundColor Red
+        return
+    }
     
-    # Create post content (ASCII only, no Unicode)
+    # Create post content
     $date = Get-Date -Format "yyyy-MM-ddTHH:mm:ss+08:00"
     
-    # Create content line by line (avoid Here-String encoding issues)
+    # Create content line by line
     $lines = @(
         "---",
         "title: `"$title`"",
@@ -89,14 +104,17 @@ function New-Post {
         "All technical content is for authorized testing and security protection learning only."
     )
     
-    Set-Content -Path $postFile -Value $lines -Encoding UTF8
-    
-    Write-Host "SUCCESS: Post created: $postFile" -ForegroundColor Green
+    try {
+        Set-Content -Path $postFile -Value $lines -Encoding UTF8 -ErrorAction Stop
+        Write-Host "SUCCESS: Post created: $postFile" -ForegroundColor Green
+    }
+    catch {
+        Write-Host "ERROR: Failed to create file: $_" -ForegroundColor Red
+        return
+    }
     
     # Try to open with default editor
-    $editor = $env:EDITOR
-    if (-not $editor) { $editor = "code" }  # Default to VS Code
-    
+    $editor = "code"  # VS Code
     try {
         Start-Process $editor -ArgumentList $postFile -ErrorAction Stop
         Write-Host "INFO: Opened in editor" -ForegroundColor Cyan
