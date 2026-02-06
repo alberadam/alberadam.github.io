@@ -1,47 +1,71 @@
 baseURL = "https://alberadam.github.io/"
 title = "安全工程师成长笔记"
-theme = "ananke"
+theme = "PaperMod"
 languageCode = "zh-cn"
 defaultContentLanguage = "zh"
-hasCJKLanguage = true
 
 enableRobotsTXT = true
 enableEmoji = true
 
-# 分页配置
+# ✅ 启用分类
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  series = "series"
+
 [pagination]
-  pagerSize = 5
-  path = "page"
+  pagerSize = 10
 
-# 禁用某些页面类型
-disableKinds = ["taxonomy", "term"]
-
-# 主题参数
 [params]
-  author = "Albert"
-  description = "安全服务工程师转型之路 | 每周安全技术分享"
-  github_username = "alberadam"
-  ananke_primary_color = "#3498db"
-  ananke_secondary_color = "#2c3e50"
-  show_related_posts = true
-  show_reading_time = true
-  show_post_date = true
-  show_author = true
+  env = "production"
+  title = "Alber's Security Notes"
+  description = "红队开发 | 渗透测试 | 代码审计"
+  author = "Alber"
+  defaultTheme = "auto"
 
-# 菜单配置
+  # -------------------------------------------------------
+  # ✅ 修正后的社交图标配置
+  # -------------------------------------------------------
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/alberadam"
+
+  [[params.socialIcons]]
+    name = "email"
+    url = "mailto:alberadam2@yahoo.com"
+  # -------------------------------------------------------
+
+  [params.homeInfoParams]
+    Title = "Hi there 👋 I'm Alber"
+    Content = "Security Service Engineer -> Red Team Developer. \n 记录从安服到安全研究员的进阶之路。"
+
 [menu]
   [[menu.main]]
-    identifier = "posts"
-    name = "📝 技术文章"
-    url = "/posts/"
+    identifier = "home"
+    name = "🏠 首页"
+    url = "/"
     weight = 1
-    
+
   [[menu.main]]
-    identifier = "about"
-    name = "👤 关于"
-    url = "/about/"
+    identifier = "archives"
+    name = "📚 归档"
+    url = "/archives/"
     weight = 2
 
-# 输出配置（完整格式）
-[outputs]
-  home = ["HTML", "RSS"]
+  [[menu.main]]
+    identifier = "categories"
+    name = "🗂️ 分类"
+    url = "/categories/"
+    weight = 3
+
+  [[menu.main]]
+    identifier = "search"
+    name = "🔍 搜索"
+    url = "/search/"
+    weight = 4
+
+  [[menu.main]]
+    identifier = "about"
+    name = "🙋‍♂️ 关于"
+    url = "/about/"
+    weight = 5
