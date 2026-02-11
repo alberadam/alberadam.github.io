@@ -69,3 +69,6 @@ enableEmoji = true
     name = "🙋‍♂️ 关于"
     url = "/about/"
     weight = 5
+# 找到这一块，修改为下面这样：
+[outputs]
+    home = ["HTML", "RSS", "JSON"]
