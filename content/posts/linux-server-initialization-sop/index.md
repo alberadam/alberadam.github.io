@@ -1,7 +1,7 @@
 ﻿---
 title: "Linux 服务器初始化与安全加固指南：从零构建高效军火库"
 date: 2026-02-13T15:00:00+08:00
-draft: True
+draft: Ture
 tags: ["Linux", "DevOps", "Security", "Proxy", "Shell", "Mihomo"]
 categories: ["Engineering"]
 summary: "一份经过实战验证的 Ubuntu Server 初始化 SOP。涵盖源优化、SSH 密钥固化、Zsh 环境搭建，以及基于 Mihomo 的智能代理控制脚本实现。"
