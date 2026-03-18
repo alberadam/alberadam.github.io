@@ -1,13 +1,13 @@
 ﻿---
-title: "从零构建企业级无代理应急响应框架 (Argus-IR) 的记录与思考"
+title: "从零构建轻量级无代理应急响应框架 (Argus-IR) 的记录与思考"
 date: 2026-03-18T20:06:28+08:00
 draft: True
 tags: ["Windows", "DevOps", "Security", "Response", "PowerShell"]
 categories: ["Tech"]
-description: "构建企业级无代理应急响应框架 (Argus-IR) 的记录与思考"
+description: "构建轻量级无代理应急响应框架 (Argus-IR) 的记录与思考"
 ---
 
-# 从零构建企业级无代理应急响应框架 (Argus-IR) 的实战与思考
+# 从零构建轻量级无代理应急响应框架 (Argus-IR) 的实战与思考
 
 ## 引言：为什么还要再造一个轮子？
 
