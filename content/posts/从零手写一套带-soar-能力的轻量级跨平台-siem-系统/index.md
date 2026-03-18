@@ -1,7 +1,7 @@
 ﻿---
 title: "从零手写一套带 SOAR 能力的轻量级跨平台 SIEM 系统的记录与思考"
 date: 2026-03-18T19:51:21+08:00
-draft: true
+draft: True
 tags: ["Linux", "Windows", "DevOps", "Security", "SIEM", "RabbitMQ", "Python"]
 categories: ["Tech"]
 description: "如何从零开始构建一份可用的轻量级SIEM平台."

@@ -1,7 +1,7 @@
 ﻿---
 title: "从零构建企业级无代理应急响应框架 (Argus-IR) 的记录与思考"
 date: 2026-03-18T20:06:28+08:00
-draft: true
+draft: True
 tags: ["Windows", "DevOps", "Security", "Response", "PowerShell"]
 categories: ["Tech"]
 description: "构建企业级无代理应急响应框架 (Argus-IR) 的记录与思考"
