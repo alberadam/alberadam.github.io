@@ -1,6 +1,6 @@
 ﻿---
 title: "安全工程师的自动化静态博客构建与踩坑实录"
-date: 2026-03-18T22:30:00+08:00
+date: 2026-03-18T19:51:21+08:00
 draft: false
 tags: ["Hugo", "DevOps", "PowerShell", "Blog", "自动化", "踩坑"]
 categories: ["Engineering"]
